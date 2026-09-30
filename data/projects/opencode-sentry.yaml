@@ -1,0 +1,26 @@
+name: OpenCode Sentry
+repo: https://github.com/sudo-heyu/OpenCodesentry
+tagline: "Android alerts for OpenCode: task done, permission, question, failure — with voice"
+description: >-
+  An Android companion that tells you when your OpenCode agent needs you. A foreground
+  service holds an SSE connection to your own machine (exposed over Tailscale by a small
+  Python bridge) and alerts on task completion, permission prompts, questions and failures
+  using notification, vibration, ringtone and offline TTS voice. A three-layer keep-alive
+  (accessibility keeper, persistent Job, exact-alarm watchdog) keeps it running after
+  aggressive vendor ROMs kill it. Everything stays on your own tailnet — there is no
+  third-party server. Not affiliated with the OpenCode team.
+tags:
+  - android
+  - notifications
+  - mobile
+  - tailscale
+  - self-hosted
+  - tts
+installation: |
+  Download the APK from the [Releases page](https://github.com/sudo-heyu/OpenCodesentry/releases)
+  (Android 12+).
+
+  On the machine that runs OpenCode, start the bridge:
+  `python3 tools/bridge/opencode-bridge.py`, then enter the printed tailnet address,
+  port `4096` and the OpenCode password in the app. Full guide:
+  [tools/bridge/README.md](https://github.com/sudo-heyu/OpenCodesentry/blob/main/tools/bridge/README.md).
